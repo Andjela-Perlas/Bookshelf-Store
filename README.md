@@ -1,4 +1,4 @@
-# BookShelf-Store
+# Bookshelf-Store
 A list of technologies:
 - Bootstrap 4
 - JavaScript
