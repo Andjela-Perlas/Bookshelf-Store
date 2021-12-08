@@ -4,6 +4,7 @@
 
 * Website contains an admin panel where you can control what can be inserted, edited or deleted.
 
+
 A list of technologies:
 - Bootstrap 4
 - JavaScript
