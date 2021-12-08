@@ -1,4 +1,5 @@
 <?php 
+
 namespace app\controllers;
 
 use app\models\Menu;
@@ -12,6 +13,7 @@ class ErrorController extends Controller {
 	public function __construct($conn) {
 		$this->conn = $conn;
 	}
+	
 
 
 	public function error404() {
@@ -20,6 +22,7 @@ class ErrorController extends Controller {
 		$networks = $this->linkNetwork($this->conn);
 		$this->view("404", ["menu" => $menu, "networks" => $networks]);
 	}
+	
 	
 
 	public function error403() {
