@@ -1,4 +1,5 @@
 <?php
+
 namespace app\controllers;
 
 use app\models\Contact;
@@ -46,7 +47,6 @@ class ContactAdminController extends Controller {
                 echo $e->getMessage();
                 $code = 500;
             }
-
         }
 
         $this->json($code);
@@ -69,8 +69,6 @@ class ContactAdminController extends Controller {
             $code = 500;
         }
 
-
         $this->json($data, $code);
     }
-
 }
