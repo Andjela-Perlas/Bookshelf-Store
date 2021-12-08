@@ -1,4 +1,5 @@
 <?php 
+
 namespace app\controllers;
 
 use app\models\Menu;
@@ -17,7 +18,6 @@ class ContactController extends Controller {
 
 
     public function insertContact() {
-
 
         $data = "";
         $code = 404;
@@ -61,7 +61,6 @@ class ContactController extends Controller {
                 http_response_code(422);
 
             } else {
-                
                 $contactModel = new Contact($this->conn);
                 $contactModel->addContact($fullName, $email, $content);
                 $this->redirect("index.php?page=contact");
