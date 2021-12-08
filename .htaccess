@@ -15,5 +15,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [L]
 
-ErrorDocument 404 http://localhost/books-finished/books/index.php?page=404
-ErrorDocument 403 http://localhost/books-finished/books/index.php?page=403
+ErrorDocument 404 http://localhost/books/books/index.php?page=404
+ErrorDocument 403 http://localhost/books/books/index.php?page=403
