@@ -26,14 +26,17 @@ $(document).ready(function(){
             submitIcon.click();
         }
     });
+   
 
     submitIcon.mouseup(function(){
         return false;
     });
+   
 
     searchBox.mouseup(function(){
         return false;
     });
+   
 
     submitIcon.click(function(){
         if(isOpen == false){
@@ -44,10 +47,13 @@ $(document).ready(function(){
             isOpen = false;
         }
     });
+   
 
 
     /****************SEARCH**********************/
 
+   
+   
     $("#search").keyup(function(e){
         e.preventDefault();
         let value = $("#search").val();
@@ -60,9 +66,7 @@ $(document).ready(function(){
                 value: value
             },
             success: function(data){
-
                 printBooks(data);
-
             },
             error: function(xhr, status, statusText){
                 console.log(xhr);
@@ -71,6 +75,7 @@ $(document).ready(function(){
         });
     });
     
+   
 
 
     $(document).on("click", ".category", function(e){
@@ -180,6 +185,3 @@ function printBooks(data){
     }
     $("#books").html(html);
 }
-
-
-
