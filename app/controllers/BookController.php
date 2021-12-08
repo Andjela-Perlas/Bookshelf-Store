@@ -1,4 +1,5 @@
 <?php
+
 namespace app\controllers;
 
 use app\models\Book;
@@ -33,7 +34,6 @@ class BookController extends Controller {
                 $userID = $_SESSION['user']->userID;
                 $cartNumber = $this->linkCart($this->conn, $userID);
                 $this->view("book", ["book" => $book, "menu" => $menu, "networks" => $networks, "books" => $books, "cartNumber" => $cartNumber]);
-                
             } else {
                 $this->view("book", ["book" => $book, "menu" => $menu, "networks" => $networks, "books" => $books]);
             }
