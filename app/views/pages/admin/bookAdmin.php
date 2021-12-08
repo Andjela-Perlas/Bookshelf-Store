@@ -1,7 +1,6 @@
 <i class="fas fa-table"></i>
 Book Table </div>
 <div class="container-fluid">
-
   <div class="card-body">
     <div class="table-responsive col-md-13">
       <table class="table">
@@ -59,10 +58,7 @@ Book Table </div>
 </div>
 </div>    
 </div>
-
 </div>    
 </div>
-
-
 </div>
 </div>
