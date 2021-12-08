@@ -1,5 +1,7 @@
 <?php
+
 namespace app\models;
+
 
 class Menu {
 
@@ -10,6 +12,7 @@ class Menu {
         $this->conn = $conn;
     }
 
+    
 
     public function getAllMenu() {
         return $this->conn->executeQuery("SELECT * FROM menu");
