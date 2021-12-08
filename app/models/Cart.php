@@ -1,6 +1,7 @@
 <?php
 namespace app\models;
 
+
 class Cart {
 
 	private $conn;
@@ -9,6 +10,7 @@ class Cart {
 
 		$this->conn = $conn;
 	}
+	
 
 
 	public function insertToCart($amount, $userID, $cbID) {
@@ -22,20 +24,20 @@ class Cart {
 		$query = "INSERT INTO cart(amount, userID, cbID)
 		VALUES(?,?,?);";
 
-
 		$this->conn->executeNonGet($query, $cart);
 	}
+	
 
 
 	public function deleteCartData($cartID) {
 
 		$cart = [$cartID];
 
-
 		$query = "DELETE FROM cart WHERE cartID = ?";
 
 		$this->conn->executeNonGet($query, $cart);
 	}
+	
 
 
 	public function getCart($userID) {
@@ -44,6 +46,7 @@ class Cart {
 			INNER JOIN category_book cb ON c.cbID = cb.cbID
 			INNER JOIN book b ON cb.bookID = b.bookID WHERE u.userID = ?", [$userID]);
 	}
+	
 
 
 	public function getAllCart($userID) {
@@ -52,11 +55,13 @@ class Cart {
 			INNER JOIN book b ON cb.bookID = b.bookID WHERE userID = ?", [$userID]);
 	}
 	
+	
 
 	public function getNumberOfBooks($userID) {
 
 		return $this->conn->executeQueryWithParams("SELECT COUNT(cartID) as sum  FROM cart WHERE userID = ?", [$userID]);
 	}
+	
 
 
 	public function totalPrice($userID) {
