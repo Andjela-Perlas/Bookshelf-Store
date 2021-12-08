@@ -1,4 +1,5 @@
 <?php
+
 namespace app\controllers;
     
 use app\models\Menu;
@@ -40,7 +41,6 @@ class Controller {
 
 
     protected function json($data = null, $statusCode = 200) {
-
         header("Content-Type: application/json");
         http_response_code($statusCode);
         echo json_encode($data); 
@@ -49,7 +49,6 @@ class Controller {
 
 
     protected function linkMenu($db) {
-        
         $menuModel = new Menu($db);
         return  $menuModel->getAllMenu();
     }
@@ -57,7 +56,6 @@ class Controller {
 
 
     protected function linkNetwork($db) {
-
         $networkModel = new Network($db);
         return $networkModel->getAllNetworks();
     }
@@ -65,15 +63,13 @@ class Controller {
 
 
     protected function linkCart($db, $userID) {
-            
         $cartModel = new Cart($db);
-		return $cartModel->getNumberOfBooks($userID);
+	return $cartModel->getNumberOfBooks($userID);
     }
 
 
 
     protected function saveLog($user) {
-
         $open = fopen(log_file, "a");
         if($open){
             $date = date('d-m-Y H:i:s');
@@ -85,7 +81,6 @@ class Controller {
     
         
     protected function saveErrors($errors) {
-
         $open = fopen(error_file, "a");
         if($open){
             fwrite($open, "{$errors}\n");
@@ -94,8 +89,8 @@ class Controller {
     }
 
 
+	
     protected function checkAdmin() {
-
         if(!isset($_SESSION['user']) && $_SESSION['role'] != 'Administrator') {
             header("Location:index.php?page=403"); 
             exit;
