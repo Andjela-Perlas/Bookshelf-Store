@@ -1,4 +1,5 @@
 <?php
+
 namespace app\controllers;
 
 use app\models\Book;
@@ -25,7 +26,6 @@ class BookAdminController extends Controller {
     public function bookInsert() {
 
         $this->checkAdmin();
-
         $code = null;
 
         if (isset($_POST["insertBook"])) {
@@ -35,7 +35,6 @@ class BookAdminController extends Controller {
             $priceSite = $_POST['priceSite'];
             $imgSrc = $_POST['imgSrc'];
             $imgAlt = $_POST['imgAlt'];
-
             
             try {
                 $bookModel = new Book($this->conn);
@@ -73,12 +72,10 @@ class BookAdminController extends Controller {
           $bookModel = new Book($this->conn);
           $bookModel->updateBook($name, $description, $price, $priceSite, $imgSrc, $imgAlt, $bookID);
           $code = 204;
-
       } catch(PDOException $e) {
         echo $e->getMessage();
         $code = 500;
     }   
-
 
     $this->json($code);
 }
@@ -100,12 +97,10 @@ public  function deleteBook() {
             $modelBook = new Book($this->conn);
             $modelBook->deleteBook($bookID);
             $code = 204;
-
         } catch(PDOException $e){
             echo $e->getMessage();
             $code = 500;
         }
-
     }
 
     $this->json($code);
@@ -126,7 +121,6 @@ public function getOneBook() {
         try {   
             $bookModel = new Book($this->conn);
             $data = $bookModel->getOneBook($bookID);
-
         } catch(PDOException $e){
             echo $e->getMessage();
             $code = 500;
@@ -148,12 +142,10 @@ public function getAllBooks() {
     try {	
         $bookModel = new Book($this->conn);
         $data = $bookModel->getAllBooks();
-
     } catch(PDOException $e){
         echo $e->getMessage();
         $code = 500;
     }
-
 
     $this->json($data, $code);
 }
