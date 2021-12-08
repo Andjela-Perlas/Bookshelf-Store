@@ -1,4 +1,5 @@
 <?php
+
 namespace app\models;
 
 
@@ -29,6 +30,7 @@ class Register {
         $this->conn->executeNonGet($query, $registration);
     }
 
+    
 
     public function activateUser($token) {
         return $this->conn->executeNonGet("UPDATE user SET active = 1 WHERE token = ?", [$token]);
