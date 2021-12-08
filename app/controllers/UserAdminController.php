@@ -48,6 +48,8 @@ class UserAdminController extends Controller {
 
     $this->json($code);
 }
+    
+    
 
 public function getUsers() {
 
@@ -65,5 +67,4 @@ public function getUsers() {
 
     $this->json($data, $code);
 }
-
 }
