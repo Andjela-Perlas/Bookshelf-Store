@@ -27,10 +27,10 @@ $(document).on("click", ".delete-btn", function(e) {
 });
 
 
+
 function refreshUser() {
 
     $.ajax({
-
         url: "index.php?page=getUsers",
         method: "POST",
         dataType: "json",
@@ -81,10 +81,10 @@ $(document).on("click", ".delete-contact", function(e) {
 });
 
 
+
 function refreshContact() {
 
     $.ajax({
-
         url: "index.php?page=getContact",
         method: "POST",
         dataType: "json",
@@ -110,6 +110,7 @@ function refreshContact() {
 
 
 /****************ADMIN CATEGORIES******************/ 
+
 
 
 $(".insert-update-btn").click(function() {
@@ -138,7 +139,6 @@ $(".insert-update-btn").click(function() {
              console.log(statusText);
          }
      });
-
 
     } else {
 
@@ -207,7 +207,6 @@ $(document).on("click", ".edit-category", function(e) {
             categoryID: categoryID
         },
         success: function(data) {
-
             fillForm(data);
         }, 
         error: function(xhr, status, statusText) {
@@ -219,19 +218,13 @@ $(document).on("click", ".edit-category", function(e) {
 
 
 
-
-
-
-
 function refreshCategory() {
 
     $.ajax({
         url: "index.php?page=getCategory",
         method: "POST",
         dataType: "json",
-
         success: function(data) {
-
             printCategories(data);
         },
         error: function(xhr, status, statusText) {
@@ -275,7 +268,9 @@ function printCategories(data) {
 }
 
 
+
 /***********************ADMIN BOOKS**************************/ 
+
 
 
 
@@ -293,7 +288,6 @@ $(document).on("click", ".edit-book", function(e) {
             bookID: bookID
         },
         success: function(data) {
-
             fillFormBook(data);
         }, 
         error: function(xhr, status, statusText) {
@@ -332,7 +326,6 @@ $(".insert-update-book").click(function() {
                 imgAlt: imgAlt
             },
             success: function(data) {
-
                 clearFormBook();
                 refreshBook();
             }, 
@@ -371,6 +364,7 @@ $(".insert-update-book").click(function() {
 
 
 
+
 $(document).on("click", ".delete-book", function(e) {
     e.preventDefault();
     let bookID = $(this).data("id");
@@ -393,13 +387,6 @@ $(document).on("click", ".delete-book", function(e) {
         }
     });
 });
-
-
-
-
-
-
-
 
 
 
@@ -437,7 +424,6 @@ function refreshBook() {
         method: "POST",
         dataType: "json",
         success: function(data) {
-
             printBooks(data);
         },
         error: function(xhr, status, statusText) {
@@ -467,6 +453,3 @@ function printBooks(data) {
     }
     $(".book-table").html(html);
 }
-
-
-
