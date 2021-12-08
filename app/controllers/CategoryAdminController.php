@@ -1,4 +1,5 @@
 <?php
+
 namespace app\controllers;
 
 use app\models\Category;
@@ -19,7 +20,6 @@ class CategoryAdminController extends Controller {
         $modelCategory = new Category($this->conn);
         $category = $modelCategory->getAllCategories();
         $this->checkAdmin();
-
         $this->viewAdmin("categoryAdmin", ["category" => $category]);
     }
 
@@ -28,7 +28,6 @@ class CategoryAdminController extends Controller {
     public function categoryInsert() {
 
         $this->checkAdmin();
-
         $code = null;
         $data = "";
 
@@ -73,7 +72,6 @@ class CategoryAdminController extends Controller {
                 echo $e->getMessage();
                 $code = 500;
             }
-
         }
 
         $this->json($code);
@@ -97,19 +95,19 @@ class CategoryAdminController extends Controller {
 
         $this->json($data, $code);
     }
+    
 
 
     public function getOneCategory() {
 
         $this->checkAdmin();
-
         $code = null;
 
         if(isset($_POST['btn'])) {
 
             $categoryID = $_POST['categoryID'];
+            
             try {	
-
                 $categoryModel = new Category($this->conn);
                 $data = $categoryModel->getOneCategory($categoryID);
 
