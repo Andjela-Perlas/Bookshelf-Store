@@ -82,7 +82,6 @@ class BookAdminController extends Controller {
 
 
 
-
 public  function deleteBook() {
 
     $this->checkAdmin();
@@ -129,7 +128,6 @@ public function getOneBook() {
 
     $this->json($data, $code);
 }
-
 
 
 
