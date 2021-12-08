@@ -40,11 +40,8 @@ $(document).ready(function() {
                 cartID: cartID
             },
             success: function(data){
-
                 refreshAmount();
-
                 refreshView();
-
                 refreshCartNumber();
             },
             error: function(xhr, status, statusText){
@@ -60,7 +57,6 @@ $(document).ready(function() {
 function refreshAmount(){
 
     $.ajax({
-
         url: "index.php?page=getAmount",
         method: "POST",
         dataType: "json",
@@ -71,7 +67,6 @@ function refreshAmount(){
             }
             $("#price").html(html);
         }
-
     });
 }
 
@@ -101,7 +96,6 @@ function refreshCartNumber(){
         url: "index.php?page=getCartNumber",
         method: "POST",
         dataType: "json",
-        
         success: function(data){
             let html="";
             for(let book of data){
@@ -119,7 +113,6 @@ function refreshCartNumber(){
 
 
 function printProducts(data){
-
     let html="";
     for(let book of data){
         html += `<tr>
@@ -134,6 +127,3 @@ function printProducts(data){
     }
     $("#table-cart").html(html);
 }
-
-
-
