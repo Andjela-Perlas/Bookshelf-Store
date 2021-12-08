@@ -1,4 +1,5 @@
 <?php
+
 namespace app\models;
 
 
@@ -10,10 +11,10 @@ class Network {
 
         $this->conn = $conn;
     }
-
+    
+    
 
     public function getAllNetworks() {
         return $this->conn->executeQuery("SELECT * FROM socialnetwork");
     }
 }
-
