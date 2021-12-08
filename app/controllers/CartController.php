@@ -1,4 +1,5 @@
 <?php
+
 namespace app\controllers;
 
 use app\models\Cart;
@@ -29,7 +30,6 @@ class CartController extends Controller {
 			$priceSite = $_POST["priceSite"];
 			$categoryID = $_POST["categoryID"];
 
-			
 			try {
 				$cartModel = new Cart($this->conn);
 				$cartModel->insertToCart($priceSite, $userID, $categoryID);
@@ -78,7 +78,6 @@ class CartController extends Controller {
 
 			$userID = $_POST["userID"];
 			
-			
 			try {
 				$cartModel = new Cart($this->conn);
 				$data = $cartModel->getCart($userID);
@@ -101,10 +100,9 @@ class CartController extends Controller {
 			$cartModel = new Cart($this->conn);
 			$data = $cartModel->getAllCart($userID);
 
-			} catch(PDOException $e){
+			} catch(PDOException $e) {
 				echo $e->getMessage();
 			}
-
 
 			$this->json($data);
 	}
